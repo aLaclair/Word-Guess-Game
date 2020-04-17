@@ -3,6 +3,7 @@ let wins = 0
 let guessesRemaining = 10
 let guessedLetters
 let asnwer = ''
+let answerArray = answer.join(' ')
 let underscoreLength = []
 let wrongGuess = []
 
@@ -19,26 +20,25 @@ let underscores = () => {
     }
     return underscoreLength;
 }
-
-    var letterGuessed = document.addEventListener('keydown', function(event) {
-        if (letterGuessed = answer.includes(event.key)) {
+//displaying guessed letters
+    var letterGuessed = document.addEventListener('keypress', function(event) {
+        if (letterGuessed = answer.includes(event.key.toLowerCase())) {         //if key pressed is correct, it will be added to the string. If not it will be pushed to the wrong guess array
             
         }
         else {
-            
-            if (wrongGuess.includes(letterGuessed)) [
-                
+            if (wrongGuess.includes(event.key)) [
             ]
             else {
-                wrongGuess.push(event.key)
+                wrongGuess.push(event.key.toLowerCase())
+                guessesRemaining--; //if key pressed is incorrect and isn't a part of the array already, it will be displayed and guesses remaining will decrease by 1
             }
-
         }
         document.getElementById('guessedLettersValue').innerHTML = wrongGuess;
+        document.getElementById('guessValue').innerHTML = guessesRemaining;
     })
  
+//calling functions and displaying stats
 
-document.getElementById('guessValue').innerHTML = guessesRemaining;
 document.getElementById('winsValue').innerHTML = wins;
 randomWord();
 underscores();
