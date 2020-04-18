@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Word-Guess-Game
 
 ## What is a Word-Guess-Game?
