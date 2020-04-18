@@ -38,13 +38,6 @@ let underscores = () => {
                 randomWord()
                 underscores()
             }
-            else if (guessesRemaining == 0) {
-                wrongGuess = []
-                guessesRemaining = 10
-                underscoreLength = []
-                randomWord()
-                underscores()
-            }
             document.getElementById('winsValue').innerHTML = wins;
             document.getElementById('word').innerHTML = underscoreLength.join(' ');
         }
@@ -53,6 +46,15 @@ let underscores = () => {
             else {
                 wrongGuess.push(event.key.toLowerCase())
                 guessesRemaining--; //if key pressed is incorrect and isn't a part of the array already, it will be displayed and guesses remaining will decrease by 1
+                
+                if (guessesRemaining == 0) {
+                wrongGuess = []
+                guessesRemaining = 10
+                underscoreLength = []
+                randomWord()
+                underscores()
+                }
+                document.getElementById('word').innerHTML = underscoreLength.join(' ');
             }
         }
         document.getElementById('guessedLettersValue').innerHTML = wrongGuess;
