@@ -2,25 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link type="text/css" href="./assets/css/reset.css">
-        <link type="text/css" href="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Word Guess Game</title>
     </head>
     <body>
-        <p>Press any key to get started!</p>
-        <div class = "stats">
-            <p id="wins">Wins</p>
-            <div id="winsValue"></div>
-        </div>
-        <div class = "gameActual">
-            <p id="currentWord">Current Word</p>
-            <p id="word">------</p>
-        </div>
-        <div class="guesses">
-            <p id="guessNumber">Number Of Guesses Remaining</p>
-            <div id="guessValue">10</div>
-            <p id="guessedLetters">Letters Already Guessed</p>
-            <div id="guessedLettersValue"></div>
+        <div class="container">
+            <div class = "stats">
+                <p id="wins">Wins</p>
+                <div id="winsValue"></div>
+            </div>
+            <div class = "wordContainer">
+                <p id="press">Press any key to get started!</p>
+                <div class ="gameActual">
+                    <p id="currentWord">Current Word</p>
+                    <p class="values" id="word"></p>
+                </div>
+                <div class="guesses">
+                    <p id="guessNumber">Number Of Guesses Remaining</p>
+                    <div class="values" id="guessValue">10</div>
+                    <p id="guessedLetters">Letters Already Guessed</p>
+                    <div class="values" id="guessedLettersValue"></div>
+                </div>
+            </div>
         </div>
     <script src="assets/javascript/game.js"></script>
     </body>

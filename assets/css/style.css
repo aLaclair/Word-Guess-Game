@@ -1,0 +1,60 @@
+@font-face {
+    src: url(./fonts/Friday13v12.ttf);
+    font-family: scary;
+}
+@font-face {
+    src: url(./fonts/DK\ Face\ Your\ Fears.ttf);
+    font-family: press;
+}
+
+body {
+    height: 1001px;
+}
+.container {
+    background-image: url(../images/background-image.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white;
+    position: relative;
+}
+.gameActual {
+    padding: 50px
+}
+#guessNumber, #guessValue, #guessedLetters, #currentWord{
+    padding-bottom: 50px;
+}
+.values{
+    color: red;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 48px;
+}
+
+.stats {
+    position: absolute;
+    text-align: center;
+    color: white;
+    padding: 2%;
+    }
+#wins {
+    padding-bottom: 10px;
+    font-family: scary;
+}
+#winsValue {
+    color: red;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 48px;
+}
+.wordContainer {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-family: press;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+#press {
+    font-family: scary;
+}
