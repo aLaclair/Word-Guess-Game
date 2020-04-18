@@ -2,7 +2,7 @@ const words = ['murder', 'blood', 'knife', 'haunt', 'death']
 let wins = 0
 let guessesRemaining = 10
 let guessedLetters
-let answer = ''
+let answer = []
 let underscoreLength = []
 let wrongGuess = []
 let rightGuess = []
@@ -21,13 +21,32 @@ let underscores = () => {
     return underscoreLength;
 }
 
-//displaying guessed letters
+    //********************************************** Main game ************************************************** 
     var letterGuessed = document.addEventListener('keypress', function(event) {
         if (letterGuessed = answer.includes(event.key.toLowerCase())) {         //if key pressed is correct, it will be added to the string. If not it will be pushed to the wrong guess array
             for (j = 0; j < answer.length; j++) {
-                answer[j] == event.key
+                if (answer[j] === event.key) {
+                underscoreLength[j] = event.key
+                }
             }
-            console.log('cool')
+            document.getElementById('word').innerHTML = underscoreLength.join(' ')
+            if (underscoreLength.join('').toString() == answer) {
+                wins++
+                wrongGuess = []
+                guessesRemaining = 10
+                underscoreLength = []
+                randomWord()
+                underscores()
+            }
+            else if (guessesRemaining == 0) {
+                wrongGuess = []
+                guessesRemaining = 10
+                underscoreLength = []
+                randomWord()
+                underscores()
+            }
+            document.getElementById('winsValue').innerHTML = wins;
+            document.getElementById('word').innerHTML = underscoreLength.join(' ');
         }
         else {
             if (wrongGuess.includes(event.key)) []
@@ -38,12 +57,12 @@ let underscores = () => {
         }
         document.getElementById('guessedLettersValue').innerHTML = wrongGuess;
         document.getElementById('guessValue').innerHTML = guessesRemaining;
-    })
         
+    })
+    // ********************************************** End of main game ***********************************************
+
 //calling functions and displaying stats
-document.getElementById('winsValue').innerHTML = wins;
 randomWord();
 underscores();
 document.getElementById('word').innerHTML = underscoreLength.join(' ');
-
-
+document.getElementById('winsValue').innerHTML = wins;
