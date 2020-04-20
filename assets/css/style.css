@@ -8,7 +8,7 @@
 }
 
 body {
-    height: 1001px;
+    height: 100vh
 }
 .container {
     background-image: url(../images/background-image.jpeg);
@@ -18,6 +18,10 @@ body {
     height: 100%;
     color: white;
     position: relative;
+}
+#titleCard {
+    margin-bottom: 50px;
+    font-size: 72px;
 }
 .gameActual {
     padding: 50px

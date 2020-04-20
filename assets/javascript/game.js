@@ -47,7 +47,7 @@ let underscores = () => {
         }
 //if key pressed is incorrect and isn't a part of the array already, it will be displayed and guesses remaining will decrease by 1
         else {
-            if (wrongGuess.includes(event.key)) []
+            if (wrongGuess.includes(event.key.toUpperCase())) []
             else {
                 wrongGuess.push(event.key.toUpperCase())
                 guessesRemaining--; 
@@ -61,8 +61,10 @@ let underscores = () => {
                 }
                 document.getElementById('word').innerHTML = underscoreLength.join(' ');
             }
+            
         }
         document.getElementById('guessedLettersValue').innerHTML = wrongGuess.join(' ');
+        console.log(wrongGuess)
         document.getElementById('guessValue').innerHTML = guessesRemaining;
         
     })
