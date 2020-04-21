@@ -11,7 +11,6 @@ let rightGuess = []
 // picks a random word from the words array
 function randomWord() {
     answer = words[Math.floor(Math.random() * words.length)];
-    console.log(answer)
 }
 
 //generates underscores based on length of the variable answer
@@ -64,7 +63,6 @@ let underscores = () => {
             
         }
         document.getElementById('guessedLettersValue').innerHTML = wrongGuess.join(' ');
-        console.log(wrongGuess)
         document.getElementById('guessValue').innerHTML = guessesRemaining;
         
     })
