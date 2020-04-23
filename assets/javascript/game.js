@@ -7,6 +7,18 @@ let answer = []
 let underscoreLength = []
 let wrongGuess = []
 let rightGuess = []
+function winner() {
+    wins++
+    wrongGuess = []
+    guessesRemaining = 10
+    underscoreLength = []
+    randomWord()
+    underscores()
+    document.getElementById('word').innerHTML = underscoreLength.join(' ');
+    document.getElementById('winsValue').innerHTML = wins;
+    document.getElementById('guessedLettersValue').innerHTML = wrongGuess.join(' ');
+    document.getElementById('guessValue').innerHTML = guessesRemaining;
+}
 
 // picks a random word from the words array
 function randomWord() {
@@ -34,15 +46,11 @@ let underscores = () => {
 // if the word is complete, the game chooses a new word and increases wins counter by 1
             document.getElementById('word').innerHTML = underscoreLength.join(' ')
             if (underscoreLength.join('').toString() == answer) {
-                wins++
-                wrongGuess = []
-                guessesRemaining = 10
-                underscoreLength = []
-                randomWord()
-                underscores()
+                setTimeout(winner, 1000)
+               
             }
-            document.getElementById('winsValue').innerHTML = wins;
-            document.getElementById('word').innerHTML = underscoreLength.join(' ');
+            
+            
         }
 //if key pressed is incorrect and isn't a part of the array already, it will be displayed and guesses remaining will decrease by 1
         else {
